@@ -53,3 +53,4 @@ def calculateUpstream(causes) {
   }  
 }
 **/
+return True;
