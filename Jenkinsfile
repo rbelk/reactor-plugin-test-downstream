@@ -1,4 +1,3 @@
-/*
 node() {
   
   // You could parse this out of a pom file, for example...
@@ -52,5 +51,3 @@ def calculateUpstream(causes) {
     return "${root}Upstream/master/LastSuccessful/repository/"
   }  
 }
-**/
-return True;
