@@ -16,8 +16,7 @@ def build() {
 	println "Build build build";
 
 	// Maybe even further downstream
-	step([$class: 'FireEventStep', eventName: 'build', properties: """upstreamSha1=${env.GIT_COMMIT}
-version=1.0"""]);
+	step([$class: 'FireEventStep', eventName: 'build', properties: """version=1.0"""]);
 }
 
 def registerDownstream(ver) {
@@ -28,7 +27,7 @@ String script =  """
   println "I am looking for a version ${ver}";
   println event.eventProperties['version'];
   
-  if( event.jobFullName.startsWith("Upstream/") && event.eventProperties['version'] == "${ver}" )
+  if(event.eventProperties['version'] == "${ver}" )
     return true;
   return false;
    """;
